@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Craft, inspect, decode, replay and capture raw
+OChisel is an advanced network packet crafter for authorised testing that builds, inspects, decodes, replays and captures raw TCP/UDP/ICMP/ARP/IPv6 packets. It computes accurate checksums, renders coloured hex dumps and supports PCAP export as well as import and replay. Additional modes include a port scanner, packet sniffer, protocol fuzzer and flood engine, using only the standard library.
 
 ---
 
 ## ✨ Features
 
-- Craft/decode TCP/UDP/ICMP/ARP packets with sniffer, SYN scanner, PCAP replay, fuzzer & checksum lab
+- Craft raw TCP/UDP/ICMP/ARP/IPv6 packets with accurate checksums
+- Decode packets from hex or .bin/.pcap files with coloured hex dump
+- PCAP export plus import and replay
+- TCP port scanner and live packet sniffer with filters
+- Protocol fuzzer and flood engine
+- No external dependencies — standard library only (root required to transmit)
 
 ---
 
@@ -38,7 +43,10 @@ Craft, inspect, decode, replay and capture raw
 ## 🚀 Usage
 
 ```bash
-./OChisel
+./OChisel scan --src 192.168.1.5 --dst 192.168.1.10 --ports common
+./OChisel craft --proto tcp --src 10.0.0.1 --dst 10.0.0.2 --dport 80
+./OChisel decode --hex 450000280001...
+./OChisel --help
 ```
 
 ---
